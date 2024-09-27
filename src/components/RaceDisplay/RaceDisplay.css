@@ -1,0 +1,93 @@
+/* RaceDisplay.css */
+
+/* Container for the race display */
+.race-display-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Header styling */
+.race-display-container h3 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* List of race results */
+.race-results-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+/* First place styling */
+.first-place {
+    background-color: #f1c40f; /* Gold medal color */
+    color: #2c3e50;
+    padding: 10px;
+    border: 2px solid #d4ac0d; /* Darker gold border */
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Second place styling */
+.second-place {
+    background-color: #bdc3c7; /* Silver medal color */
+    color: #2c3e50;
+    padding: 10px;
+    border: 2px solid #95a5a6; /* Darker silver border */
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Third place styling */
+.third-place {
+    background-color: #cd7f32; /* Bronze medal color */
+    color: #2c3e50;
+    padding: 10px;
+    border: 2px solid #a0522d; /* Darker bronze border */
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Styling for all other places */
+.other-place {
+    background-color: #fff;
+    color: #2c3e50;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* Button to reset the race */
+.race-display-reset-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+}
+
+/* Button hover effect */
+.race-display-reset-btn:hover {
+    background-color: #c0392b;
+}

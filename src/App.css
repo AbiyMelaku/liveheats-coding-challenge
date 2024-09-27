@@ -1,38 +1,73 @@
+/* === Global Styles === */
+
+/* (Your existing global styles remain unchanged) */
+
+/* === App Component Styles === */
+
+/* Center the text and provide a clean layout */
 .App {
-  text-align: center;
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Ensures app takes full height of screen */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
+/* Updated style for the App Header */
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #2c3e50; /* Dark slate/gray */
+    padding: 20px;
+    color: white;
+    border-bottom: 4px solid #e74c3c; /* Warm red */
+    width: 100%; /* Full-width header */
+    box-sizing: border-box;
+    text-align: center; /* Ensures center alignment in all cases */
 }
 
-.App-link {
-  color: #61dafb;
+/* Customize the main heading */
+h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: #e74c3c; /* Warm red */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Simple text style for description */
+p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #ecf0f1; /* Lighter gray */
+}
+
+/* === Content Container === */
+
+/* Main container for the app content */
+.app-content {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+/* === Button Styles === */
+
+/* (Your existing button styles remain unchanged) */
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+
+    .app-content {
+        padding: 15px;
+    }
 }

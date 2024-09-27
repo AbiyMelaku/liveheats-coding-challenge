@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css"; // Import the component-specific CSS
+import RaceSetup from "./components/RaceSetup/RaceSetup";
+import RaceResults from "./components/RaceResults/RaceResults";
+import RaceDisplay from "./components/RaceDisplay/RaceDisplay";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [raceData, setRaceData] = useState(null);
+    const [raceResults, setRaceResults] = useState(null);
+
+    // Handle race setup submission
+    const handleRaceCreate = (students) => {
+        setRaceData(students);
+        setRaceResults(null); // Reset previous results
+    };
+
+    // Handle race results submission
+    const handleResultsSubmit = (results) => {
+        setRaceResults(results);
+    };
+
+    // Handle resetting the race
+    const handleReset = () => {
+        setRaceData(null);
+        setRaceResults(null);
+    };
+
+    return (
+        <div className="App">
+            <header className="App-header">
+                <h1>Race Management System</h1>
+                <p>Set up races, enter results, and manage race data!</p>
+            </header>
+
+            <main className="app-content">
+                {!raceData && <RaceSetup onRaceCreate={handleRaceCreate} />}
+
+                {raceData && !raceResults && (
+                    <RaceResults
+                        race={raceData}
+                        onResultsSubmit={handleResultsSubmit}
+                    />
+                )}
+
+                {raceResults && (
+                    <RaceDisplay results={raceResults} onReset={handleReset} />
+                )}
+            </main>
+        </div>
+    );
 }
 
 export default App;

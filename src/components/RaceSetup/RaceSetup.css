@@ -1,0 +1,73 @@
+/* RaceSetup.css */
+
+/* Container for the entire setup */
+.race-setup {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Styling for input boxes */
+.styled-input {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    width: calc(60% - 20px);
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/* Styling for lane input */
+.lane-input {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    width: calc(40% - 10px);
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+/* Flexbox to align student name and lane inputs */
+.student-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Button styling */
+.add-btn,
+.submit-btn,
+.remove-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.remove-btn {
+    background-color: #c0392b;
+}
+
+.add-btn:hover,
+.submit-btn:hover,
+.remove-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Flex container for buttons */
+.buttons-container {
+    display: flex;
+    justify-content: space-between;
+}
