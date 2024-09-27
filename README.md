@@ -2,7 +2,7 @@
 
 ## Challenge Instructions
 
-You can view the challenge instructions [here](./Liveheats - Coding Challenge.pdf).
+You can view the challenge instructions [here](./liveheats-coding-challenge.pdf).
 
 ## Available Scripts
 
