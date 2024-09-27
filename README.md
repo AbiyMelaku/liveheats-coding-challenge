@@ -1,6 +1,8 @@
 # LiveHeats Coding Challenge
 
+## Challenge Instructions
 
+You can view the challenge instructions [here](./Liveheats - Coding Challenge.pdf).
 
 ## Available Scripts
 
