@@ -25,6 +25,11 @@ function App() {
         setRaceResults(null);
     };
 
+    // Handle edited race results
+    const handleEditResults = (updatedResults) => {
+        setRaceResults(updatedResults);
+    };
+
     return (
         <div className="App">
             <header className="App-header">
@@ -43,7 +48,11 @@ function App() {
                 )}
 
                 {raceResults && (
-                    <RaceDisplay results={raceResults} onReset={handleReset} />
+                    <RaceDisplay
+                        results={raceResults}
+                        onReset={handleReset}
+                        onEditResults={handleEditResults} // Pass the handler here
+                    />
                 )}
             </main>
         </div>

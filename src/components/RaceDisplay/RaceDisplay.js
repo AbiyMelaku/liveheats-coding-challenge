@@ -1,14 +1,7 @@
-import React from "react";
-import "./RaceDisplay.css"; // Import the component-specific CSS
+// src/components/RaceDisplay/RaceDisplay.js
 
-const groupByPlace = (results) => {
-    return results.reduce((acc, result) => {
-        const place = result.place;
-        if (!acc[place]) acc[place] = [];
-        acc[place].push(result.student.name);
-        return acc;
-    }, {});
-};
+import React, { useState } from "react";
+import "./RaceDisplay.css"; // Import the component-specific CSS
 
 // Helper to format the names with commas and an ampersand before the last name
 const formatNames = (names) => {
@@ -22,6 +15,7 @@ const formatNames = (names) => {
     }
 };
 
+// Helper to convert place numbers to ordinal text
 const getPlaceText = (place) => {
     switch (place) {
         case "1":
@@ -35,8 +29,70 @@ const getPlaceText = (place) => {
     }
 };
 
-const RaceDisplay = ({ results, onReset }) => {
-    // Group students by place
+const RaceDisplay = ({ results, onReset, onEditResults }) => {
+    const [isEditMode, setIsEditMode] = useState(false);
+    const [editedResults, setEditedResults] = useState([...results]);
+
+    // Handle changes to place values in edit mode
+    const handlePlaceChange = (index, event) => {
+        const newResults = [...editedResults];
+        newResults[index].place = event.target.value;
+        setEditedResults(newResults);
+    };
+
+    // Save the edited results and exit edit mode
+    const handleSaveChanges = () => {
+        onEditResults(editedResults);
+        setIsEditMode(false);
+    };
+
+    // Group students by their place for display mode
+    const groupByPlace = (results) => {
+        return results.reduce((acc, result) => {
+            const place = result.place;
+            if (!acc[place]) acc[place] = [];
+            acc[place].push(result.student.name);
+            return acc;
+        }, {});
+    };
+
+    if (isEditMode) {
+        // Render edit mode: list each student with an input to edit their place
+        return (
+            <div className="race-display-container">
+                <h3>Edit Race Results</h3>
+                <ul className="race-results-list">
+                    {editedResults.map((result, index) => (
+                        <li
+                            key={index}
+                            className="race-result-item other-place"
+                        >
+                            <span>{result.student.name} - </span>
+                            <input
+                                type="number"
+                                value={result.place}
+                                onChange={(e) => handlePlaceChange(index, e)}
+                                data-testid={`place-input-${index}`}
+                            />
+                        </li>
+                    ))}
+                </ul>
+                <div className="buttons-container">
+                    <button onClick={handleSaveChanges} className="save-btn">
+                        Save Changes
+                    </button>
+                    <button
+                        onClick={onReset}
+                        className="race-display-reset-btn"
+                    >
+                        Start New Race
+                    </button>
+                </div>
+            </div>
+        );
+    }
+
+    // Render display mode: group and format race results
     const groupedResults = groupByPlace(results);
 
     return (
@@ -63,9 +119,17 @@ const RaceDisplay = ({ results, onReset }) => {
                         </li>
                     ))}
             </ul>
-            <button onClick={onReset} className="race-display-reset-btn">
-                Start New Race
-            </button>
+            <div className="buttons-container">
+                <button
+                    onClick={() => setIsEditMode(true)}
+                    className="edit-btn"
+                >
+                    Edit Results
+                </button>
+                <button onClick={onReset} className="race-display-reset-btn">
+                    Start New Race
+                </button>
+            </div>
         </div>
     );
 };

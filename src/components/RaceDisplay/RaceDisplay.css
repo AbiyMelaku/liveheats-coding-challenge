@@ -1,4 +1,4 @@
-/* RaceDisplay.css */
+/* src/components/RaceDisplay/RaceDisplay.css */
 
 /* Container for the race display */
 .race-display-container {
@@ -6,8 +6,8 @@
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 8px;
-    max-width: 400px;
-    margin: 0 auto;
+    max-width: 500px;
+    margin: 20px auto;
 }
 
 /* Header styling */
@@ -73,11 +73,16 @@
     border-radius: 6px;
     margin-bottom: 10px;
     font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Button to reset the race */
-.race-display-reset-btn {
-    background-color: #e74c3c;
+/* Button styles */
+.race-display-reset-btn,
+.edit-btn,
+.save-btn {
+    background-color: #3498db;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -85,9 +90,41 @@
     cursor: pointer;
     width: 100%;
     font-size: 1rem;
+    margin-bottom: 10px; /* Add spacing between buttons */
 }
 
-/* Button hover effect */
+/* Specific button colors */
+.race-display-reset-btn {
+    background-color: #e74c3c;
+}
+
+.edit-btn {
+    background-color: #3498db;
+}
+
+.save-btn {
+    background-color: #2ecc71;
+}
+
+/* Hover effects for buttons */
 .race-display-reset-btn:hover {
     background-color: #c0392b;
+}
+
+.edit-btn:hover {
+    background-color: #2980b9;
+}
+
+.save-btn:hover {
+    background-color: #27ae60;
+}
+
+/* Input field styling in edit mode */
+.race-results-list input {
+    padding: 5px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 60px;
+    text-align: center;
 }
