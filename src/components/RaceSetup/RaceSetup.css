@@ -71,3 +71,10 @@
     display: flex;
     justify-content: space-between;
 }
+
+/* Error message styling */
+.error-message {
+    color: #e74c3c; /* Red color for errors */
+    font-weight: bold;
+    margin-top: 10px;
+}

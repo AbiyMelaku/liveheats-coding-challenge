@@ -3,16 +3,19 @@ import "./RaceSetup.css"; // Import the component-specific CSS
 
 const RaceSetup = ({ onRaceCreate }) => {
     const [students, setStudents] = useState([{ name: "", lane: "" }]);
+    const [error, setError] = useState(""); // Error state
 
     // Handle adding a new student
     const handleAddStudent = () => {
         setStudents([...students, { name: "", lane: "" }]);
+        setError(""); // Clear error when adding a new student
     };
 
     // Handle removing a student
     const handleRemoveStudent = (index) => {
         const newStudents = students.filter((_, i) => i !== index);
         setStudents(newStudents);
+        setError(""); // Clear error when removing a student
     };
 
     // Handle input change for a student's name or lane
@@ -20,6 +23,7 @@ const RaceSetup = ({ onRaceCreate }) => {
         const newStudents = [...students];
         newStudents[index][field] = event.target.value;
         setStudents(newStudents);
+        setError(""); // Clear error when editing a field
     };
 
     // Handle form submission
@@ -28,7 +32,7 @@ const RaceSetup = ({ onRaceCreate }) => {
 
         // Ensure at least two students are added
         if (students.length < 2) {
-            alert("A race must have at least two students.");
+            setError("A race must have at least two students.");
             return;
         }
 
@@ -39,20 +43,20 @@ const RaceSetup = ({ onRaceCreate }) => {
                     student.name.trim() === "" || student.lane.trim() === ""
             )
         ) {
-            alert("Please fill in all student names and assign lanes.");
+            setError("Please fill in all student names and assign lanes.");
             return;
         }
 
         // Validate that lane numbers are unique and positive
         const lanes = students.map((student) => student.lane);
         if (new Set(lanes).size !== lanes.length) {
-            alert("Each student must have a unique lane.");
+            setError("Each student must have a unique lane.");
             return;
         }
 
         // Validate that all lane numbers are positive
         if (students.some((student) => parseInt(student.lane, 10) < 1)) {
-            alert("Lane numbers must be positive.");
+            setError("Lane numbers must be positive.");
             return;
         }
 
@@ -95,6 +99,8 @@ const RaceSetup = ({ onRaceCreate }) => {
                         )}
                     </div>
                 ))}
+                {/* Display error message if there's an error */}
+                {error && <p className="error-message">{error}</p>}
                 <div className="buttons-container">
                     <button
                         type="button"
