@@ -1,5 +1,3 @@
-// src/components/RaceDisplay/RaceDisplay.js
-
 import React, { useState } from "react";
 import "./RaceDisplay.css"; // Import the component-specific CSS
 

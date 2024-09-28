@@ -1,7 +1,5 @@
 /* === Global Styles === */
 
-/* (Your existing global styles remain unchanged) */
-
 /* === App Component Styles === */
 
 /* Center the text and provide a clean layout */
@@ -55,8 +53,6 @@ p {
 }
 
 /* === Button Styles === */
-
-/* (Your existing button styles remain unchanged) */
 
 /* Add responsiveness */
 @media (max-width: 768px) {
