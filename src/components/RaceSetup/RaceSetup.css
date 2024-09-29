@@ -39,6 +39,8 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
+    gap: 10px; /* Add spacing between input fields and the remove button */
+    padding-right: 10px; /* Add padding to push the remove button away from the input fields */
 }
 
 /* Button styling */
@@ -54,14 +56,19 @@
     margin-top: 10px;
 }
 
+/* Adjusting the remove button */
 .remove-btn {
     background-color: #c0392b;
+    padding: 10px 12px; /* Ensure enough padding for a balanced button */
+    font-size: 0.9rem; /* Adjust font size if necessary */
+    border-radius: 5px;
+    margin-left: 10px; /* Add space between the remove button and input field */
+    align-self: flex-start; /* Align button with the top of the inputs */
 }
 
-.add-btn:hover,
-.submit-btn:hover,
+/* Additional hover effect for consistency */
 .remove-btn:hover {
-    background-color: #c0392b;
+    background-color: #e74c3c;
 }
 
 /* Flex container for buttons */
