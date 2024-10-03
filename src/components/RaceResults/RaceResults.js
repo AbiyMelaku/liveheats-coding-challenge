@@ -20,10 +20,6 @@ const RaceResults = ({ race, onResultsSubmit }) => {
 
         newResults[index].place = value;
         setResults(newResults);
-
-        // Log the current error state and place values
-        console.log("Error state (after place change):", error);
-        console.log("Results (after place change):", newResults);
     };
 
     const handleSubmit = () => {
