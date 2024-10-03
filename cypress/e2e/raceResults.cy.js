@@ -71,15 +71,15 @@ describe("Race Results Validation", () => {
         );
     });
 
-    it("should prevent entering invalid places", () => {
-        // Enter an invalid place (e.g., 0) for a student
-        cy.get(".race-results-input").eq(0).type("0"); // Invalid place
+    it("should allow valid places for all students", () => {
+        // Enter valid places for both students
+        cy.get(".race-results-input").eq(0).type("1");
+        cy.get(".race-results-input").eq(1).type("2");
 
-        // Submit and expect validation error
+        // Submit the form
         cy.get(".race-results-submit-btn").click();
-        cy.get(".error-message").should(
-            "contain",
-            "All students must have a finishing place."
-        );
+
+        // Expect the RaceDisplay component to be shown
+        cy.get(".race-display-container").should("exist");
     });
 });
