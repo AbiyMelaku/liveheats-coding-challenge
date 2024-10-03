@@ -23,15 +23,15 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### `npm test -- --watchAll`
 
-Launches the test runner and ensures all suites run.\
+Launches the test runner and ensures all suites run.
 
 ### `npx cypress open`
 
-Opens the Cypress test runner. This will launch the Cypress UI, where you can select and run individual tests.\
+Opens the Cypress test runner. This will launch the Cypress UI, where you can select and run individual tests.
 
 ### `npx cypress run`
 
-This will run all tests in headless mode (without the UI).\
+This will run all tests in headless mode (without the UI).
 
 ### `npm run build`
 
