@@ -4,6 +4,10 @@
 
 You can view the challenge instructions [here](./liveheats-coding-challenge.pdf).
 
+## Coding Challenge Demo
+
+You can find a short demo of my interpretation of the challenge [here](https://youtu.be/8BH-nEiR2uo)
+
 ## Available Scripts
 
 In the project directory, you can run:
