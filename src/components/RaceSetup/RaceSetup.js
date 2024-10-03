@@ -21,9 +21,16 @@ const RaceSetup = ({ onRaceCreate }) => {
     // Handle input change for a student's name or lane
     const handleInputChange = (index, event, field) => {
         const newStudents = [...students];
-        newStudents[index][field] = event.target.value;
+        const value = event.target.value;
+
+        if (field === "lane" && value < 1) {
+            setError("Lane numbers must be positive.");
+        } else {
+            setError(""); // Clear error if input is valid
+        }
+
+        newStudents[index][field] = value;
         setStudents(newStudents);
-        setError(""); // Clear error when editing a field
     };
 
     // Handle form submission
